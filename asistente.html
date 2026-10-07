@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Assistant - Sport IQ</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cuenta.css">
+  <link rel="stylesheet" href="extras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="asistente">
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="Index.html" class="brand-container"><img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img"></a>
+      <nav class="nav-links">
+        <a href="Index.html" class="nav-link">PARTIDOS</a>
+        <a href="#" class="nav-link">ESTADÍSTICAS</a>
+        <a href="asistente.html" class="nav-link active">IA ASSISTANT</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="usuario.html" class="user-chip"><span class="user-avatar">👤</span><span class="user-name">LUIS</span><span class="user-divider">|</span><span class="user-balance">150.00 €</span></a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <div class="assistant-layout">
+    <aside class="assistant-side">
+      <button class="action-btn new-chat" id="new-chat" type="button">+ Nueva conversación</button>
+      <p class="group-title">Recientes</p>
+      <div class="chat-history" id="chat-history"></div>
+      <div class="usage-mini">
+        <div class="usage-top"><span>Consultas hoy</span><strong>32 / 50</strong></div>
+        <div class="usage-bar"><div class="usage-fill" style="width:64%"></div></div>
+        <a href="usuario.html#plan" class="muted">Plan Pro · Gestionar plan</a>
+      </div>
+    </aside>
+
+    <section class="assistant-main">
+      <div class="chat-header">
+        <div class="chat-status"><span class="status-indicator"></span><span>STATSBOT | IA ASSISTANT</span></div>
+        <span class="chat-tag">DB NBA v2.4</span>
+      </div>
+      <div class="chat-messages assistant-chat" id="chat-messages">
+        <div class="welcome" id="welcome">
+          <h1>¿En qué puedo ayudarte, Luis?</h1>
+          <p class="muted">Pregunta por jugadores, equipos o cuotas. Analizo la base de datos de la NBA por ti.</p>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+      </div>
+      <form class="chat-input-area" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Pregunta a StatsBot..." autocomplete="off">
+        <button type="submit" class="send-btn">Enviar &gt;</button>
+      </form>
+      <p class="disclaimer">StatsBot puede cometer errores. Las probabilidades son estimaciones. Juega con responsabilidad.</p>
+    </section>
+  </div>
+  <script src="extras.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración - Sport IQ</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cuenta.css">
+  <link rel="stylesheet" href="extras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="config">
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="Index.html" class="brand-container"><img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img"></a>
+      <nav class="nav-links">
+        <a href="Index.html" class="nav-link">PARTIDOS</a>
+        <a href="#" class="nav-link">ESTADÍSTICAS</a>
+        <a href="asistente.html" class="nav-link">IA ASSISTANT</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="usuario.html" class="user-chip"><span class="user-avatar">👤</span><span class="user-name">LUIS</span><span class="user-divider">|</span><span class="user-balance">150.00 €</span></a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <div class="account-layout">
+    <aside class="account-side">
+      <div class="panel-box settings-tabs" role="tablist">
+        <button class="sidebar-sub-item tab-btn active" data-tab="general" role="tab">⚙️ General</button>
+        <button class="sidebar-sub-item tab-btn" data-tab="notificaciones" role="tab">🔔 Notificaciones</button>
+        <button class="sidebar-sub-item tab-btn" data-tab="seguridad" role="tab">🔒 Seguridad y juego responsable</button>
+        <button class="sidebar-sub-item tab-btn" data-tab="ia" role="tab">🤖 Asistente IA</button>
+      </div>
+    </aside>
+
+    <main class="account-main settings-main">
+      <section class="panel-box account-section tab-panel" data-panel="general">
+        <div class="section-head"><h3>General</h3></div>
+        <div class="setting-row"><div><strong>Idioma</strong><p class="muted">Idioma de la interfaz</p></div>
+          <select class="select"><option>Español</option><option>English</option><option>Català</option></select></div>
+        <div class="setting-row"><div><strong>Formato de cuotas</strong><p class="muted">Cómo se muestran las cuotas</p></div>
+          <select class="select"><option>Decimal (2.10)</option><option>Fraccional (11/10)</option><option>Americano (+110)</option></select></div>
+        <div class="setting-row"><div><strong>Deporte favorito</strong><p class="muted">Se muestra primero en Partidos</p></div>
+          <select class="select"><option>Baloncesto (NBA)</option><option>Fútbol</option><option>Tenis</option></select></div>
+        <div class="setting-row"><div><strong>Zona horaria</strong><p class="muted">Para las horas de los partidos</p></div>
+          <select class="select"><option>Madrid (GMT+1)</option><option>Canarias (GMT+0)</option><option>Nueva York (GMT-5)</option></select></div>
+      </section>
+
+      <section class="panel-box account-section tab-panel" data-panel="notificaciones" hidden>
+        <div class="section-head"><h3>Notificaciones</h3></div>
+        <p class="group-title">Qué quieres recibir</p>
+        <label class="setting-row"><div><strong>Inicio de partidos</strong><p class="muted">Aviso 30 minutos antes</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Alertas de lesiones</strong><p class="muted">Bajas y dudas de tus equipos</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Apuestas de valor de la IA</strong><p class="muted">Cuando StatsBot detecte una oportunidad</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Resultados de cupones</strong><p class="muted">Ganados, perdidos y anulados</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Uso del plan de IA</strong><p class="muted">Aviso al llegar al 80% de consultas</p></div><span class="switch"><input type="checkbox"><i></i></span></label>
+        <p class="group-title">Dónde recibirlas</p>
+        <label class="setting-row"><div><strong>En la web</strong><p class="muted">Campana de la barra superior</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Correo electrónico</strong><p class="muted">Resumen diario</p></div><span class="switch"><input type="checkbox"><i></i></span></label>
+      </section>
+
+      <section class="panel-box account-section tab-panel" data-panel="seguridad" hidden>
+        <div class="section-head"><h3>Seguridad y juego responsable</h3></div>
+        <p class="group-title">Cambiar contraseña</p>
+        <form id="pass-form" class="account-form" novalidate>
+          <label class="field"><span>Contraseña actual</span><input type="password" name="actual" autocomplete="current-password"></label>
+          <span></span>
+          <label class="field"><span>Nueva contraseña</span><input type="password" name="nueva" autocomplete="new-password"></label>
+          <label class="field"><span>Repetir nueva contraseña</span><input type="password" name="repetir" autocomplete="new-password"></label>
+          <p class="form-error" id="pass-error" role="alert" style="grid-column:1/-1"></p>
+          <div class="form-actions"><button type="submit" class="action-btn">Actualizar contraseña</button></div>
+        </form>
+        <p class="group-title">Protección</p>
+        <label class="setting-row"><div><strong>Verificación en dos pasos</strong><p class="muted">Código adicional al iniciar sesión</p></div><span class="switch"><input type="checkbox"><i></i></span></label>
+        <label class="setting-row"><div><strong>Perfil visible</strong><p class="muted">Otros usuarios pueden ver tu nombre de usuario</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <p class="group-title">Juego responsable</p>
+        <div class="setting-row"><div><strong>Límite mensual de depósito</strong><p class="muted">No podrás depositar más de esta cantidad</p></div>
+          <select class="select"><option>Sin límite</option><option>100 €</option><option>300 €</option><option>500 €</option></select></div>
+        <div class="setting-row"><div><strong>Eliminar cuenta</strong><p class="muted">Acción permanente. Se borrarán tus datos.</p></div>
+          <button class="action-btn outline-btn danger-btn" id="delete-btn" type="button">Eliminar cuenta</button></div>
+      </section>
+
+      <section class="panel-box account-section tab-panel" data-panel="ia" hidden>
+        <div class="section-head"><h3>Asistente IA</h3><a href="usuario.html#plan" class="action-btn outline-btn login-link">Ver mi plan</a></div>
+        <div class="setting-row"><div><strong>Estilo de respuesta</strong><p class="muted">Cuánto detalle da StatsBot</p></div>
+          <select class="select"><option>Equilibrado</option><option>Breve</option><option>Detallado</option></select></div>
+        <label class="setting-row"><div><strong>Mostrar fuentes de datos</strong><p class="muted">Indica de dónde salen las estadísticas</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Sugerir apuestas</strong><p class="muted">Permite recomendaciones de cupón en las respuestas</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <label class="setting-row"><div><strong>Guardar historial de conversaciones</strong><p class="muted">Podrás retomarlas en IA Assistant</p></div><span class="switch"><input type="checkbox" checked><i></i></span></label>
+        <div class="setting-row"><div><strong>Borrar historial</strong><p class="muted">Elimina todas tus conversaciones con StatsBot</p></div>
+          <button class="action-btn outline-btn" id="clear-btn" type="button">Borrar historial</button></div>
+      </section>
+    </main>
+  </div>
+  <script src="extras.js"></script>
+</body>
+</html>

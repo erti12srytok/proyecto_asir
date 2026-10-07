@@ -1,0 +1,153 @@
+/* =============================================================================
+   SPORT IQ - LOGIN Y PÁGINA DE USUARIO (usa las variables de styles.css)
+   ============================================================================= */
+
+/* ---------- Campos de formulario (compartidos) ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+.field input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  color: var(--text-main);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field input:focus { border-color: var(--accent-blue); }
+.field input:disabled { color: var(--text-muted); border-color: var(--border-color); background: var(--bg-body); }
+.field input.invalid { border-color: #ef4444; }
+.form-error { min-height: 18px; font-size: 12px; color: #f87171; }
+.muted { color: var(--text-muted); font-size: 12px; }
+:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+
+/* ---------- LOGIN ---------- */
+.login-body { align-items: center; justify-content: center; padding: 24px; }
+.login-box {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.login-logo { height: 56px; width: auto; align-self: flex-start; border-radius: var(--radius-sm); }
+.login-box h1 { font-size: 22px; letter-spacing: -0.5px; }
+.login-sub { color: var(--text-muted); font-size: 13px; margin-top: -6px; }
+.login-box form { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
+.login-btn { padding: 12px; font-size: 13px; }
+.login-foot { text-align: center; font-size: 12px; color: var(--text-muted); }
+.login-foot a { color: var(--accent-orange); text-decoration: none; font-weight: 600; }
+.login-foot a:hover { text-decoration: underline; }
+
+/* ---------- USUARIO: LAYOUT ---------- */
+.user-chip-active { border-color: var(--accent-orange); }
+.account-layout {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px 32px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.account-side { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 84px; }
+.account-main { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.account-side a.sidebar-sub-item { display: block; text-decoration: none; }
+.account-section { padding: 20px; scroll-margin-top: 84px; }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.section-head h3 { font-size: 15px; font-weight: 700; }
+
+/* ---------- PERFIL ---------- */
+.profile-card { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 20px 14px; }
+.profile-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--accent-orange);
+  display: grid; place-items: center;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 6px;
+}
+.profile-card h2 { font-size: 16px; }
+.profile-user { color: var(--text-dim); font-size: 12px; margin-bottom: 6px; }
+.logout-btn { width: 100%; margin-top: 10px; padding: 10px; }
+.logout-btn:hover { border-color: #ef4444; color: #f87171; background: transparent; }
+
+/* ---------- FORMULARIO DE DATOS ---------- */
+.account-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+.form-actions { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 10px; }
+.form-actions[hidden] { display: none; }
+
+/* ---------- PLAN DE IA ---------- */
+.current-plan {
+  background: linear-gradient(135deg, #13241f 0%, #171c2a 50%, #162040 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.current-plan h4 { font-size: 22px; margin: 8px 0 2px; }
+.usage-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+.usage-top strong { color: var(--text-main); }
+.usage-bar { height: 8px; background: rgba(0, 0, 0, 0.4); border-radius: 20px; overflow: hidden; }
+.usage-fill { height: 100%; width: 0; background: var(--accent-blue); border-radius: 20px; transition: width 0.5s ease; }
+.usage-fill.warn { background: var(--accent-orange); }
+
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.plan-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.plan-card.is-current { border-color: var(--accent-blue); }
+.plan-card h4 { font-size: 15px; }
+.plan-price { font-size: 20px; font-weight: 700; }
+.plan-price small { font-size: 12px; font-weight: 500; color: var(--text-dim); }
+.plan-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-muted); flex: 1; }
+.plan-card li::before { content: "✓ "; color: var(--accent-green); font-weight: 700; }
+.plan-card .action-btn { width: 100%; padding: 10px; }
+.plan-card .action-btn:disabled { background: transparent; border: 1px solid var(--accent-blue); color: #60a5fa; cursor: default; }
+
+/* ---------- AVISO ---------- */
+.toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--bg-card);
+  border: 1px solid var(--accent-green);
+  color: var(--text-main);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .account-layout { grid-template-columns: 1fr; }
+  .account-side { position: static; }
+  .plans-grid, .current-plan { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .account-form { grid-template-columns: 1fr; }
+  .account-layout { padding: 12px; }
+  .nav-links { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

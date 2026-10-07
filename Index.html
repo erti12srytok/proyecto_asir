@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport IQ - Análisis y Apuestas de Élite</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="navbar">
+    <div class="nav-left">
+      <!-- LOGO DE SPORT IQ DESDE LA CARPETA IMAGENES -->
+      <a href="#" class="brand-container">
+        <img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#" class="nav-link active">PARTIDOS</a>
+        <a href="#" class="nav-link">ESTADÍSTICAS</a>
+        <a href="#" class="nav-link">IA ASSISTANT</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="login.html" class="action-btn login-link">Iniciar sesión</a>
+      <a href="usuario.html" class="user-chip">
+        <span class="user-avatar">👤</span>
+        <span class="user-name">LUIS</span>
+        <span class="user-divider">|</span>
+        <span class="user-balance" id="user-balance">150.00 €</span>
+      </a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <!-- CUERPO PRINCIPAL: 3 COLUMNAS -->
+  <div class="main-dashboard">
+
+    <!-- COLUMNA IZQUIERDA: CALENDARIO Y LISTA DE PARTIDOS -->
+    <aside class="sidebar-left">
+      <!-- Mini Calendario -->
+      <div class="panel-box">
+        <div class="panel-header-simple">
+          <span>&lt;</span>
+          <strong id="current-month-label">Octubre 2026</strong>
+          <span>&gt;</span>
+        </div>
+        <div class="calendar-grid">
+          <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+          <span class="cal-dim">28</span><span class="cal-dim">29</span><span class="cal-dim">30</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span>
+          <span class="cal-active">5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+          <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+        </div>
+      </div>
+
+      <!-- Lista de Partidos Hoy -->
+      <div class="panel-box">
+        <div class="list-item active-item">
+          <!-- Miniaturas opcionales para la lista -->
+          <div class="list-teams">
+            <img src="imagenes/Boston-Celtics-logo.png" alt="BOS" class="team-mini-icon" onerror="this.style.display='none'">
+            <span>BOS @ MIA</span>
+          </div>
+          <span class="time-badge">20:30h</span>
+        </div>
+        <div class="list-item">
+          <div class="list-teams">
+            <img src="imagenes/lakers.png" alt="LAL" class="team-mini-icon" onerror="this.style.display='none'">
+            <span>LAL @ GSW</span>
+          </div>
+          <span class="time-badge">22:00h</span>
+        </div>
+        <div class="list-item">
+          <div class="list-teams">
+            <img src="imagenes/nuggets.png" alt="DEN" class="team-mini-icon" onerror="this.style.display='none'">
+            <span>DEN @ DAL</span>
+          </div>
+          <span class="time-badge">01:00h</span>
+        </div>
+      </div>
+
+      <!-- Conferencias y Filtros -->
+      <div class="panel-box">
+        <div class="dropdown-header">CONFERENCIAS <span>▾</span></div>
+        <div class="sidebar-sub-item">🏀 Conferencia Este</div>
+        <div class="sidebar-sub-item">🏀 Conferencia Oeste</div>
+      </div>
+
+      <div class="panel-box">
+        <div class="dropdown-header">FILTROS STATS <span>▾</span></div>
+        <div class="sidebar-sub-item">Puntos / Rebotes</div>
+        <div class="sidebar-sub-item">Triples / Asistencias</div>
+        <div class="sidebar-sub-item">Reporte de Lesiones</div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA CENTRAL: PARTIDO Y JUGADORES -->
+    <main class="content-center">
+      <!-- Tarjeta del Partido Destacado con logos de equipos -->
+      <section class="matchup-banner">
+        <div class="matchup-details">
+          
+          <!-- LOGO EQUIPO LOCAL -->
+          <div class="team-logo-container">
+            <img src="imagenes/Boston-Celtics-logo.png" alt="Boston Celtics" class="team-logo-img" onerror="this.src='https://placehold.co/80x80/161c2d/ffffff?text=BOS'">
+            <span class="team-code">BOS</span>
+          </div>
+
+          <div class="matchup-info">
+            <h2>BOSTON CELTICS @ MIAMI HEAT</h2>
+            <p>TD Garden • Hoy, 20:30h</p>
+          </div>
+
+          <!-- LOGO EQUIPO VISITANTE -->
+          <div class="team-logo-container">
+            <img src="imagenes/miami-heat-logo-1.png" alt="Miami Heat" class="team-logo-img" onerror="this.src='https://placehold.co/80x80/161c2d/ffffff?text=MIA'">
+            <span class="team-code">MIA</span>
+          </div>
+
+        </div>
+
+        <div class="odds-row">
+          <button class="bet-button" data-label="Boston Celtics (Moneyline)" data-odds="1.45">
+            Celtics <strong>1.45</strong>
+          </button>
+          <button class="bet-button" data-label="Miami Heat (Moneyline)" data-odds="2.80">
+            Heat <strong>2.80</strong>
+          </button>
+        </div>
+      </section>
+
+      <!-- MERCADOS DE JUGADORES -->
+      <section class="props-section">
+        <div class="props-header">
+          <h3>MERCADOS DE JUGADORES (Con métricas IA)</h3>
+        </div>
+
+        <!-- JUGADOR 1: JAYSON TATUM -->
+        <article class="player-card">
+          <!-- ZONA PARA LA FOTO DEL JUGADOR -->
+          <div class="player-image-wrap">
+            <img src="imagenes/tatum.png" alt="Jayson Tatum" class="player-photo" onerror="this.src='https://placehold.co/100x100/008348/ffffff?text=Tatum'">
+          </div>
+
+          <div class="player-content">
+            <div class="player-row-top">
+              <div>
+                <h4>Jayson Tatum (BOS)</h4>
+                <p class="prop-target">Puntos: Over 26.5 (Cuota 1.85)</p>
+              </div>
+              <span class="ia-badge">IA ESTIMADO 72% PROB</span>
+            </div>
+
+            <div class="player-stats-grid">
+              <div><span>Últimos 5:</span> <strong>29.4 ppg</strong></div>
+              <div><span>vs MIA (Def #4):</span> <strong>24.2 ppg</strong></div>
+              <div><span>vs MIA Histórico:</span> <strong>29.3 ppg</strong></div>
+              <div><span>Último h2h:</span> <strong>31 pts</strong></div>
+            </div>
+
+            <div class="player-card-actions">
+              <button class="action-btn" data-label="Tatum Over 26.5 Pts" data-odds="1.85">Apostar 1.85</button>
+              <button class="action-btn outline-btn" onclick="askChatbotAbout('Tatum')">Consultar a IA</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- JUGADOR 2: BAM ADEBAYO -->
+        <article class="player-card">
+          <!-- ZONA PARA LA FOTO DEL JUGADOR -->
+          <div class="player-image-wrap">
+            <img src="imagenes/adebayo.png" alt="Bam Adebayo" class="player-photo" onerror="this.src='https://placehold.co/100x100/98002e/ffffff?text=Adebayo'">
+          </div>
+
+          <div class="player-content">
+            <div class="player-row-top">
+              <div>
+                <h4>Bam Adebayo (MIA)</h4>
+                <p class="prop-target">Rebotes: Over 10.5 (Cuota 1.95)</p>
+              </div>
+              <span class="ia-badge ia-badge-amber">IA ESTIMADO 64% PROB</span>
+            </div>
+
+            <div class="player-stats-grid">
+              <div><span>Últimos 5:</span> <strong>11.2 rpg</strong></div>
+              <div><span>Ritmo Posesiones:</span> <strong>97.5</strong></div>
+              <div><span>Minutos Esperados:</span> <strong>34 min</strong></div>
+              <div><span>Reb. Ofensivos:</span> <strong>3.1 avg</strong></div>
+            </div>
+
+            <div class="player-card-actions">
+              <button class="action-btn" data-label="Adebayo Over 10.5 Reb" data-odds="1.95">Apostar 1.95</button>
+              <button class="action-btn outline-btn" onclick="askChatbotAbout('Adebayo')">Consultar a IA</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- COLUMNA DERECHA: ASISTENTE IA -->
+    <aside class="sidebar-right">
+      <div class="chat-header">
+        <div class="chat-status">
+          <span class="status-indicator"></span>
+          <span>STATSBOT | IA ASSISTANT</span>
+        </div>
+        <span class="chat-tag">DB NBA v2.4</span>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="msg user-msg">
+          <div class="msg-header">LUIS</div>
+          <p>¿Vale la pena apostar al OVER de puntos de Tatum hoy?</p>
+        </div>
+
+        <div class="msg bot-msg">
+          <div class="msg-header">StatsBot</div>
+          <p>Analizando la base de datos NBA para Tatum vs Heat:</p>
+          <ul class="bot-analysis-list">
+            <li>Tatum promedia 29.4 pts/partido en los últimos 5 encuentros.</li>
+            <li>MIA tiene la defensa perimetral #4 de la liga (limita tiros de campo).</li>
+            <li><strong>Predicción:</strong> El Over 26.5 es arriesgado.</li>
+          </ul>
+          <p class="bot-highlight">Nuestra recomendación de valor: <strong>Tatum Over 3.5 Asistencias</strong> (cuota 2.10) con 68% probabilidad estimada.</p>
+          
+          <button class="add-slip-btn" data-label="Tatum Over 3.5 Asistencias" data-odds="2.10">
+            + AÑADIR A CUPÓN: TATUM O3.5 AST (@ 2.10)
+          </button>
+        </div>
+      </div>
+
+      <form class="chat-input-area" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Pregunta a StatsBot..." autocomplete="off">
+        <button type="submit" class="send-btn">Enviar &gt;</button>
+      </form>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="extras.js"></script>
+</body>
+</html>

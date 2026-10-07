@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi cuenta - Sport IQ</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cuenta.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="Index.html" class="brand-container">
+        <img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="Index.html" class="nav-link">PARTIDOS</a>
+        <a href="#" class="nav-link">ESTADÍSTICAS</a>
+        <a href="#" class="nav-link">IA ASSISTANT</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="usuario.html" class="user-chip user-chip-active">
+        <span class="user-avatar">👤</span>
+        <span class="user-name" data-bind="nombre-corto">LUIS</span>
+        <span class="user-divider">|</span>
+        <span class="user-balance">150.00 €</span>
+      </a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <div class="account-layout">
+    <!-- PERFIL + MENÚ -->
+    <aside class="account-side">
+      <div class="panel-box profile-card">
+        <div class="profile-avatar" data-bind="iniciales">LG</div>
+        <h2 data-bind="nombre-completo">Luis García</h2>
+        <p class="profile-user" data-bind="usuario">@luis</p>
+        <span class="ia-badge" data-bind="plan-badge">PLAN PRO</span>
+      </div>
+      <div class="panel-box">
+        <a href="#datos" class="sidebar-sub-item">Datos de la cuenta</a>
+        <a href="#plan" class="sidebar-sub-item">Plan de IA</a>
+        <button class="action-btn outline-btn logout-btn" id="logout-btn">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="account-main">
+      <!-- DATOS DE LA CUENTA -->
+      <section class="panel-box account-section" id="datos">
+        <div class="section-head">
+          <h3>Datos de la cuenta</h3>
+          <button class="action-btn outline-btn" id="edit-btn" type="button">Editar datos</button>
+        </div>
+        <form id="account-form" class="account-form">
+          <label class="field"><span>Nombre</span><input name="nombre" value="Luis" disabled required></label>
+          <label class="field"><span>Apellidos</span><input name="apellidos" value="García Martínez" disabled required></label>
+          <label class="field"><span>Nombre de usuario</span><input name="usuario" value="luis" disabled required></label>
+          <label class="field"><span>Correo electrónico</span><input name="email" type="email" value="luis@correo.com" disabled required></label>
+          <label class="field"><span>Teléfono</span><input name="telefono" type="tel" value="+34 600 123 456" disabled></label>
+          <label class="field"><span>Fecha de nacimiento</span><input name="nacimiento" type="date" value="2000-04-12" disabled></label>
+          <label class="field"><span>País</span><input name="pais" value="España" disabled></label>
+          <label class="field"><span>Miembro desde</span><input value="15 de enero de 2026" disabled></label>
+          <div class="form-actions" id="form-actions" hidden>
+            <button type="button" class="action-btn outline-btn" id="cancel-btn">Cancelar</button>
+            <button type="submit" class="action-btn">Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- PLAN DE IA -->
+      <section class="panel-box account-section" id="plan">
+        <div class="section-head"><h3>Tu plan de IA</h3></div>
+
+        <div class="current-plan">
+          <div>
+            <span class="ia-badge" data-bind="plan-badge">PLAN PRO</span>
+            <h4 data-bind="plan-nombre">Pro</h4>
+            <p class="muted" data-bind="plan-renovacion">Se renueva el 15 de noviembre de 2026</p>
+          </div>
+          <div class="usage">
+            <div class="usage-top"><span>Consultas a StatsBot hoy</span><strong data-bind="uso-texto">32 / 50</strong></div>
+            <div class="usage-bar"><div class="usage-fill" id="usage-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="plans-grid" id="plans-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="cuenta.js"></script>
+  <script src="extras.js"></script>
+</body>
+</html>
