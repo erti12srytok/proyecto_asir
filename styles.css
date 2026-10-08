@@ -588,3 +588,59 @@ a.user-chip:hover { border-color: var(--accent-orange); }
 
 /* Botón de iniciar sesión en la barra superior */
 .login-link { text-decoration: none; display: inline-flex; align-items: center; padding: 9px 16px; }
+
+/* Botones de cambio de mes */
+.cal-nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.cal-nav-btn:hover {
+  color: #fff;
+  background: var(--bg-card);
+}
+
+/* Casillas del calendario */
+.calendar-grid span {
+  padding: 6px 0;
+  border-radius: 4px;
+  font-size: 11px;
+  position: relative;
+  user-select: none;
+}
+
+.cal-day-cell {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cal-day-cell:hover {
+  background: var(--bg-card-hover);
+  color: #fff;
+}
+
+/* Día con partidos registrados */
+.has-matches::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-orange);
+  border-radius: 50%;
+}
+
+/* Día seleccionado actualmente */
+.cal-active {
+  background: var(--accent-blue) !important;
+  color: #fff !important;
+  font-weight: 700;
+}

@@ -22,7 +22,7 @@
       
       <nav class="nav-links">
         <a href="#" class="nav-link active">PARTIDOS</a>
-        <a href="#" class="nav-link">ESTADÍSTICAS</a>
+        <a href="estadisticas.html" class="nav-link">ESTADÍSTICAS</a>
         <a href="#" class="nav-link">IA ASSISTANT</a>
       </nav>
     </div>
@@ -46,20 +46,26 @@
     <!-- COLUMNA IZQUIERDA: CALENDARIO Y LISTA DE PARTIDOS -->
     <aside class="sidebar-left">
       <!-- Mini Calendario -->
-      <div class="panel-box">
-        <div class="panel-header-simple">
-          <span>&lt;</span>
-          <strong id="current-month-label">Octubre 2026</strong>
-          <span>&gt;</span>
-        </div>
-        <div class="calendar-grid">
-          <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
-          <span class="cal-dim">28</span><span class="cal-dim">29</span><span class="cal-dim">30</span>
-          <span>1</span><span>2</span><span>3</span><span>4</span>
-          <span class="cal-active">5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
-          <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
-        </div>
-      </div>
+<!-- Mini Calendario Dinámico -->
+<div class="panel-box">
+  <div class="panel-header-simple">
+    <button id="prev-month-btn" class="cal-nav-btn">&lt;</button>
+    <strong id="current-month-label">Octubre 2026</strong>
+    <button id="next-month-btn" class="cal-nav-btn">&gt;</button>
+  </div>
+  <!-- Contenedor donde JS pintará los días -->
+  <div class="calendar-grid" id="calendar-days">
+    <!-- Se generará dinámicamente con script.js -->
+  </div>
+</div>
+
+<!-- Lista de Partidos Dinámica -->
+<div class="panel-box">
+  <div class="dropdown-header">PARTIDOS DEL DÍA (<span id="selected-date-text">Hoy</span>)</div>
+  <div id="matches-list-container">
+    <!-- Se inyectarán los partidos del día seleccionado -->
+  </div>
+</div>
 
       <!-- Lista de Partidos Hoy -->
       <div class="panel-box">

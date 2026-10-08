@@ -1,0 +1,176 @@
+/* ==========================================================================
+   ESTILOS DE LA PÁGINA DE ESTADÍSTICAS / EQUIPOS
+   ========================================================================== */
+
+.stats-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 32px 60px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.stats-header-banner {
+  background: linear-gradient(135deg, #111622 0%, #171d2e 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-titles h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.header-titles p {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.stats-search-wrap input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  width: 320px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.stats-search-wrap input:focus {
+  border-color: var(--accent-orange);
+}
+
+/* ==========================================================================
+   SECCIONES DE CONFERENCIAS
+   ========================================================================== */
+.conference-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.conference-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.conf-badge {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.east-badge {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.west-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.conf-count {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   GRID DE EQUIPOS
+   ========================================================================== */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.team-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  background: var(--bg-card);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.team-card-logo-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.team-card-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover .team-card-logo {
+  transform: scale(1.08);
+}
+
+.team-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.team-card-division {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-card-abbr {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

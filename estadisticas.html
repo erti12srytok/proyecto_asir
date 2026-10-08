@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport IQ - Estadísticas NBA por Equipos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="estadisticas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="Index.html" class="brand-container">
+        <img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img" onerror="this.src='imagenes/Sports.jpg'">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="Index.html" class="nav-link">PARTIDOS</a>
+        <a href="estadisticas.html" class="nav-link active">ESTADÍSTICAS</a>
+        <a href="Index.html" class="nav-link">IA ASSISTANT</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="usuario.html" class="user-chip">
+        <span class="user-avatar">👤</span>
+        <span class="user-name">LUIS</span>
+        <span class="user-divider">|</span>
+        <span class="user-balance" id="user-balance">150.00 €</span>
+      </a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL DE ESTADÍSTICAS -->
+  <main class="stats-page-container">
+    <header class="stats-header-banner">
+      <div class="header-titles">
+        <h1>CENTRO DE ESTADÍSTICAS NBA</h1>
+        <p>Selecciona una franquicia para consultar métricas avanzadas, quintetos, eficiencia y seguimiento del plantel.</p>
+      </div>
+      <div class="stats-search-wrap">
+        <input type="text" id="team-filter-input" placeholder="Buscar equipo o ciudad (ej. Celtics, Lakers, Miami)...">
+      </div>
+    </header>
+
+    <!-- BLOQUE CONFERENCIA ESTE -->
+    <section class="conference-section">
+      <div class="conference-title-row">
+        <div class="conf-badge east-badge">CONFERENCIA ESTE</div>
+        <span class="conf-count">15 Franquicias</span>
+      </div>
+
+      <div class="teams-grid" id="east-teams-grid">
+        <!-- Generado dinámicamente o por plantilla -->
+      </div>
+    </section>
+
+    <!-- BLOQUE CONFERENCIA OESTE -->
+    <section class="conference-section">
+      <div class="conference-title-row">
+        <div class="conf-badge west-badge">CONFERENCIA OESTE</div>
+        <span class="conf-count">15 Franquicias</span>
+      </div>
+
+      <div class="teams-grid" id="west-teams-grid">
+        <!-- Generado dinámicamente o por plantilla -->
+      </div>
+    </section>
+  </main>
+
+  <script src="estadisticas.js"></script>
+</body>
+</html>

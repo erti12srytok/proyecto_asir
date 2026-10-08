@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport IQ - Detalle de Franquicia</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="equipo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="Index.html" class="brand-container">
+        <img src="imagenes/Sports.png" alt="Sport IQ Logo" class="brand-logo-img" onerror="this.src='imagenes/Sports.jpg'">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="Index.html" class="nav-link">PARTIDOS</a>
+        <a href="estadisticas.html" class="nav-link active">ESTADÍSTICAS</a>
+        <a href="Index.html" class="nav-link">IA ASSISTANT</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <button class="icon-button" title="Notificaciones">🔔</button>
+      <a href="usuario.html" class="user-chip">
+        <span class="user-avatar">👤</span>
+        <span class="user-name">LUIS</span>
+        <span class="user-divider">|</span>
+        <span class="user-balance" id="user-balance">150.00 €</span>
+      </a>
+      <button class="icon-button" title="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="team-page-container">
+
+    <div class="team-top-bar">
+      <a href="estadisticas.html" class="back-link">&larr; Volver a todos los equipos</a>
+    </div>
+
+    <!-- BANNER DE LA FRANQUICIA -->
+    <section class="team-hero-banner">
+      <div class="hero-logo-box">
+        <img id="team-logo-hero" src="" alt="Logo Franquicia" class="hero-logo-img">
+      </div>
+
+      <div class="hero-info">
+        <div class="hero-tags">
+          <span class="badge-tag" id="team-conf-badge">CONFERENCIA ESTE</span>
+          <span class="badge-tag outline-tag" id="team-div-badge">DIVISIÓN ATLÁNTICO</span>
+        </div>
+
+        <h1 id="team-name-hero">Cargando franquicia...</h1>
+
+        <div class="hero-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">📍 Ciudad</span>
+            <strong id="team-city">--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">🏟️ Pabellón</span>
+            <strong id="team-arena">--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">👔 Entrenador Principal</span>
+            <strong id="team-coach">--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">🏆 Campeonatos NBA</span>
+            <strong id="team-championships">--</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA DE JUGADORES / PLANTILLA -->
+    <section class="roster-section">
+      <div class="section-title-row">
+        <h2>PLANTILLA Y JUGADORES</h2>
+        <span class="section-hint">Haz clic en un jugador para ver sus estadísticas completas</span>
+      </div>
+
+      <div class="roster-grid" id="roster-grid-container">
+        <!-- Roster generado dinámicamente con JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE DETALLE DEL JUGADOR -->
+  <div class="player-modal-backdrop" id="player-modal" style="display: none;">
+    <div class="player-modal-card">
+      <button class="modal-close-btn" id="modal-close">&times;</button>
+      
+      <div class="modal-body-content">
+        <div class="modal-left">
+          <div class="modal-photo-wrap">
+            <img id="modal-player-img" src="" alt="Jugador">
+          </div>
+          <span class="modal-number-pos" id="modal-player-num-pos">#0 POS</span>
+        </div>
+
+        <div class="modal-right">
+          <h3 id="modal-player-name">Nombre Jugador</h3>
+          <p class="modal-subtext" id="modal-player-team-role">Equipo • Posición</p>
+
+          <div class="modal-physical-grid">
+            <div><span>Altura:</span> <strong id="modal-height">--</strong></div>
+            <div><span>Peso:</span> <strong id="modal-weight">--</strong></div>
+            <div><span>Experiencia:</span> <strong id="modal-exp">--</strong></div>
+            <div><span>Estado:</span> <span class="status-badge" id="modal-status">Disponible</span></div>
+          </div>
+
+          <h4 class="stats-table-title">PROMEDIOS TEMPORADA ACTUAL</h4>
+          <div class="modal-stats-pills">
+            <div class="stat-pill">
+              <span>PTS</span>
+              <strong id="stat-pts">--</strong>
+            </div>
+            <div class="stat-pill">
+              <span>REB</span>
+              <strong id="stat-reb">--</strong>
+            </div>
+            <div class="stat-pill">
+              <span>AST</span>
+              <strong id="stat-ast">--</strong>
+            </div>
+            <div class="stat-pill">
+              <span>TC %</span>
+              <strong id="stat-fg">--</strong>
+            </div>
+            <div class="stat-pill">
+              <span>3P %</span>
+              <strong id="stat-3p">--</strong>
+            </div>
+            <div class="stat-pill">
+              <span>MIN</span>
+              <strong id="stat-min">--</strong>
+            </div>
+          </div>
+
+          <div class="ai-box-suggestion">
+            <div class="ai-box-title">🤖 PROYECCIÓN SPORT IQ (IA)</div>
+            <p id="modal-ai-tip">Cargando análisis predictivo...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="equipo.js"></script>
+</body>
+</html>
